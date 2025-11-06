@@ -3,9 +3,9 @@
 
   // Create iframe container
   const iframeWrapper = document.createElement("div");
-  iframeWrapper.style.position = "sticky";
-  iframeWrapper.style.bottom = "0px";
-  iframeWrapper.style.right = "0";
+  iframeWrapper.style.position = "fixed";
+  iframeWrapper.style.bottom = "20px";
+  iframeWrapper.style.right = "20px";
    iframeWrapper.style.marginLeft = "auto";
   iframeWrapper.style.width = "300px";
   iframeWrapper.style.height = "520px";
@@ -49,9 +49,9 @@
   // Floating chat bubble
   const bubble = document.createElement("div");
   bubble.innerHTML = "💬";
-  bubble.style.position = "sticky";
+  bubble.style.position = "fixed";
   bubble.style.bottom = "20px";
-  bubble.style.right = "0";
+  bubble.style.right = "20px";
    bubble.style.marginLeft = "auto"; 
   bubble.style.width = "60px";
   bubble.style.height = "60px";
