@@ -71,8 +71,16 @@
   });
 
   
-  document.body.appendChild(iframeWrapper);
-  document.body.appendChild(bubble);
+   function addChatElements() {
+    document.body.appendChild(iframeWrapper);
+    document.body.appendChild(bubble);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", addChatElements);
+  } else {
+    addChatElements();
+  }
 })();
 
 
