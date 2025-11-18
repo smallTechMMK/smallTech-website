@@ -7,33 +7,38 @@
 }
 
 h1 {
-  @apply font-[600]
-    text-[24px]
-   sm:text-[30px]
+  @apply font-bold
+  text-[24px]
+  sm:text-[30px]
   md:text-[32px]
-    lg:text-[36px];
+  lg:text-[36px]
+  text-deep-mocha;
 }
 h2 {
-  @apply font-[600]
-    text-[18px]
-     sm:text-[22px]
+  @apply font-semibold
+  text-[18px]
+  sm:text-[22px]
   md:text-[26px]
-    lg:text-[30px];
+  lg:text-[30px]
+  text-deep-mocha;
 }
 h3 {
-  @apply font-[600]
-    text-[16px]
-   sm:text-[18px]
+  @apply font-normal
+  text-[16px]
+  sm:text-[18px]
   md:text-[20px]
-    lg:text-[24px];
+  lg:text-[24px]
+  text-mauve-bark;
 }
 p {
   @apply text-justify
-   leading-snug
-    text-[14px] 
-    sm:text-[16px]
+  leading-snug
+  font-normal
+  text-[14px] 
+  sm:text-[16px]
   md:text-[17px]
-    lg:text-[18px];
+  lg:text-[18px]
+  text-liver-brown;
 }
 a {
   @apply text-cinereous;
