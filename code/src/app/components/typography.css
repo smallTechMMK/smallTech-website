@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+@layer components {
 :root {
   --background: var(--color-bg-gradient);
   --foreground: var(--color-deep-mocha);
@@ -42,4 +43,5 @@ p {
 }
 a {
   @apply text-cinereous;
+}
 }
