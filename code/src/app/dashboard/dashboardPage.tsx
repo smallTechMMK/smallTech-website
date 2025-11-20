@@ -354,7 +354,7 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
 function DeleteButton({ sessionId, onClick }) {
     return (
         <button
-            className="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+            className="px-3 py-2 rounded-md bg-[var(--color-rose)] text-white disabled:opacity-60"
             onClick={onClick}
         >
             Delete
