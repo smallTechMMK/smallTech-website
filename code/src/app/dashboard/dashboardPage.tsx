@@ -269,6 +269,10 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
                                         onSelect={(value) => onChangeStatus(r.session_id, value)}
                                     />
                                 </div>
+                                <DeleteButton
+                                sessionId={r.session_id}
+                                onClick={() => onToggleActive(r.session_id, false)}
+                                />
                             </div>
                             <div className="mt-3">
                                 <RowRemarks
@@ -278,6 +282,8 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
                                     onSave={onSaveRemarks}
                                 />
                             </div>
+                            
+
                             {isOpen && (
                                 <div className="mt-3 rounded-lg p-3 bg-brown">
                                     <div className="mb-2 text-xs text-white/70">
