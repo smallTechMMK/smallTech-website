@@ -6,9 +6,9 @@ import { HistoryItem, LeadRowData, Message } from '../models/leads';
 export type LeadStatus = 'OPEN' | 'CLOSED' | 'QUALIFYING';
 
 
-// Makes a PATCH request to update lead status or remarks
+// Makes a PATCH request to update lead status or remarks or is_active
 async function patchLeadAPI(
-  update: Partial<Pick<LeadRowData, 'status' | 'remarks'>> & { session_id: string }
+  update: Partial<Pick<LeadRowData, 'status' | 'remarks' | 'is_active'>> & { session_id: string }
 ) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/chat-info`, {
     method: 'PATCH',
@@ -38,7 +38,7 @@ export function useLeads(initial: LeadRowData[] = []) {
   const [historyError, setHistoryError] = useState<Record<string, string | undefined>>({});
 
   const patchLead = async (
-    update: Partial<Pick<LeadRowData, 'status' | 'remarks'>> & { session_id: string }
+    update: Partial<Pick<LeadRowData, 'status' | 'remarks' | 'is_active'>> & { session_id: string }
   ) => {
     return patchLeadAPI(update);
   };
@@ -66,6 +66,20 @@ export function useLeads(initial: LeadRowData[] = []) {
       setRows((prev) =>
         prev.map((r) => (r.session_id === session_id ? { ...r, remarks } : r))
       );
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setSaving((s) => ({ ...s, [session_id]: false }));
+    }
+  }, []);
+
+  // Sets is_active to false (soft delete) and removes from UI
+  const onToggleActive = useCallback(async (session_id: string, is_active: boolean) => {
+    setSaving((s) => ({ ...s, [session_id]: true }));
+    try {
+      await patchLead({ session_id, is_active });
+      // Remove from UI since backend won't return it anymore
+      setRows((prev) => prev.filter((r) => r.session_id !== session_id));
     } catch (e) {
       setError((e as Error).message);
     } finally {
@@ -108,6 +122,7 @@ export function useLeads(initial: LeadRowData[] = []) {
     setExpanded,
     onChangeStatus,
     onSaveRemarks,
+    onToggleActive,
     histories,
     historyLoading,
     historyError,
@@ -127,7 +142,7 @@ export function useFetchLeads() {
     // Async function to fetch data
     const fetchLeads = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/leads`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/chat-info`);
         if (!res.ok) return;
         const data = await res.json();
 

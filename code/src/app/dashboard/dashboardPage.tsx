@@ -29,6 +29,7 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
         setExpanded,
         onChangeStatus,
         onSaveRemarks,
+        onToggleActive,
         histories,
         historyLoading,
         historyError,
@@ -131,7 +132,20 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
                 );
             },
         },
-    ], [expanded, histories, historyLoading, onChangeStatus, onSaveRemarks, setExpanded, loadHistory, saving]);
+        {
+            header: 'Delete',
+            id: 'delete',
+            cell: ({ row }) => {
+                const r = row.original;
+                return (
+                    <DeleteButton
+                        sessionId={r.session_id}
+                        onClick={() => onToggleActive(r.session_id, false)}
+                    />
+                );
+            },
+        }
+    ], [expanded, histories, historyLoading, onChangeStatus, onSaveRemarks, onToggleActive, setExpanded, loadHistory, saving]);
 
     const table = useReactTable({
         data: rows,
@@ -336,6 +350,18 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
         </section>
     );
 }
+
+function DeleteButton({ sessionId, onClick }) {
+    return (
+        <button
+            className="px-3 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+            onClick={onClick}
+        >
+            Delete
+        </button>
+    );
+}
+
 
 function RowRemarks({
     sessionId,
