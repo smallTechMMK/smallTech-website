@@ -139,7 +139,6 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
                 const r = row.original;
                 return (
                     <DeleteButton
-                        sessionId={r.session_id}
                         onClick={() => onToggleActive(r.session_id, false)}
                     />
                 );
@@ -270,7 +269,6 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
                                     />
                                 </div>
                                 <DeleteButton
-                                sessionId={r.session_id}
                                 onClick={() => onToggleActive(r.session_id, false)}
                                 />
                             </div>
@@ -357,7 +355,7 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
     );
 }
 
-function DeleteButton({ sessionId, onClick }) {
+function DeleteButton({ onClick }) {
     return (
         <button
             className="px-3 py-2 rounded-md bg-[var(--color-rose)] text-white disabled:opacity-60"
