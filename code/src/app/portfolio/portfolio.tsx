@@ -19,7 +19,7 @@ export default function Portfolio() {
           description="Stop losing leads to late replies. Implement the SmallTech AI Sales Agent and automate 80% of your sales pipeline. "
           buttonText="Try Demo"
           onButtonClick={() => console.log("Clicked!")}
-          className="w-full max-w-[400px]"
+          className="w-full max-w-[350px]"
         />
         <Box
           image="/app.svg"
@@ -28,7 +28,7 @@ export default function Portfolio() {
           description="It is the fastest way to report local potholes, illegal dumping, broken lights, and other civic issues directly to your local government. "
           buttonText="Download"
           onButtonClick={() => console.log("Clicked!")}
-          className="w-full max-w-[400px]"
+          className="w-full max-w-[350px]"
         />
         <Box
           image="/blog.svg"
@@ -37,7 +37,7 @@ export default function Portfolio() {
           description="Stop staring at a blank screen. Our AI Blog Generator turns your ideas into engaging posts."
           buttonText="Visit AI Blog"
           onButtonClick={() => console.log("Clicked!")}
-          className="w-full max-w-[400px]"
+          className="w-full max-w-[350px]"
         />
       </div>
     </div>
