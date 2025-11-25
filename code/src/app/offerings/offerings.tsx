@@ -1,48 +1,85 @@
+import Box from "../components/common/box";
+import { offeringItems } from "./icons"
+import { techItems } from "./icons";
 import Image from "next/image";
-import OfferingCard from "./card";
-import { offeringItems, techItems } from "./icons";
 
 export default function Offerings() {
   return (
-    <div className=" max-h-screen flex flex-col items-center justify-center ">
-      {/* Section 2: Features */}
-      <div className=" flex flex-col items-center">
-        <h1 className="title mt-2">What makes us stand out</h1>
-        <div className="card-container gap-6 md:gap-4 lg:gap-4  ">
-          {offeringItems.map((row, idx) => (
-            <div
-              key={idx}
-              className={`grid ${row.length === 1
-                ? "grid-cols-1"
-                : "grid-cols-2 gap-6"
-                }`}
-            >
-              {row.map((item) => (
+    <div className="flex flex-col mx-auto
+    w-full
+    px-4 md:px-20 lg:px-15
+    py-6 md:py-10">
+      {/*MOBILE SCREEN 1: TECHNOLOGIES*/}
+      <section className="md:hidden w-full">
+        <h2 className="mb-3">Technologies we support</h2>
+        <h3 className=" mb-12">
+          Integrate AI across your stack and into your existing workflows
+        </h3>
 
-                <OfferingCard key={item.label} src={item.src} label={item.label} />
-              ))}
+        <div className="grid grid-cols-3 gap-10">
+          {techItems.map((icon, i) => (
+            <div key={i} className="flex justify-center">
+              <Image src={`./${icon}`} alt={icon} width={50} height={50} />
             </div>
           ))}
         </div>
-      </div>
-      <h1 className="title">
-        Supported Technologies
-      </h1>
+      </section>
 
-      <div className="grid grid-cols-4 sm:grid-cols-4 gap-8 lg:m-0">
-        {techItems.map((icon, idx) => (
-          <div key={idx} className="flex justify-center">
-            <Image
-              src={`./${icon}`}
-              alt={icon}
-              width={35}
-              height={35}
+      {/* MOBILE SCREEN 2: OFFERINGS */}
+      <section className="md:hidden w-full">
+        <h2 className=" mb-3 my-6">What makes us stand out</h2>
+        <h3 className=" mb-2">
+          Integrate AI across your stack and into your existing workflows
+        </h3>
+
+        <div className="grid grid-cols-1">
+          {offeringItems.flat().map((item, idx) => (
+            <Box
+              key={idx}
+              image={item.src}
+              title={item.title}
+              subtitle={item.subtitle}
             />
-          </div>
-        ))}
+          ))}
+        </div>
+      </section>
+
+      {/* DESKTOP VIEW  */}
+      <div className="hidden md:flex flex-col">
+        {/* DESKTOP: TECHNOLOGIES */}
+        <h2 className="">Technologies we support</h2>
+        <h3 className="mb-1">
+          Integrate AI across your stack and into your existing workflows
+        </h3>
+
+        <div className="grid grid-cols-6 gap-10">
+          {techItems.map((icon, idx) => (
+            <div key={idx} className="flex justify-center">
+              <Image src={`./${icon}`} alt={icon} width={40} height={40} />
+            </div>
+          ))}
+        </div>
+
+        {/* DESKTOP: OFFERINGS */}
+        <h2 className="">What makes us stand out</h2>
+        <h3 className="mb-1">
+          Integrate AI across your stack and into your existing workflows
+        </h3>
+
+        <div className="grid grid-cols-4 gap-15 w-full">
+          {offeringItems.flat().map((item, idx) => (
+
+            <Box
+              key={idx}
+              image={item.src}
+              title={item.title}
+              subtitle={item.subtitle}
+            
+            />
+          ))}
+        </div>
       </div>
-
-
     </div>
   );
 }
+
