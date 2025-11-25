@@ -24,8 +24,6 @@ export default function Box({ image,
         md:text-center
         text-left
         my-3
-        md:w-[600px]
-        md:h-[530px]
         ${className || ""}
       `}
     >
