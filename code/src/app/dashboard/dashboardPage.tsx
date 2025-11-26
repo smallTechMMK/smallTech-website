@@ -29,6 +29,7 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
         setExpanded,
         onChangeStatus,
         onSaveRemarks,
+        onToggleActive,
         histories,
         historyLoading,
         historyError,
@@ -131,7 +132,19 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
                 );
             },
         },
-    ], [expanded, histories, historyLoading, onChangeStatus, onSaveRemarks, setExpanded, loadHistory, saving]);
+        {
+            header: 'Delete',
+            id: 'delete',
+            cell: ({ row }) => {
+                const r = row.original;
+                return (
+                    <DeleteButton
+                        onClick={() => onToggleActive(r.session_id, false)}
+                    />
+                );
+            },
+        }
+    ], [expanded, histories, historyLoading, onChangeStatus, onSaveRemarks, onToggleActive, setExpanded, loadHistory, saving]);
 
     const table = useReactTable({
         data: rows,
@@ -255,6 +268,9 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
                                         onSelect={(value) => onChangeStatus(r.session_id, value)}
                                     />
                                 </div>
+                                <DeleteButton
+                                onClick={() => onToggleActive(r.session_id, false)}
+                                />
                             </div>
                             <div className="mt-3">
                                 <RowRemarks
@@ -264,6 +280,8 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
                                     onSave={onSaveRemarks}
                                 />
                             </div>
+                            
+
                             {isOpen && (
                                 <div className="mt-3 rounded-lg p-3 bg-brown">
                                     <div className="mb-2 text-xs text-white/70">
@@ -336,6 +354,18 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
         </section>
     );
 }
+
+function DeleteButton({ onClick }: { onClick: () => void }) {
+    return (
+        <button
+            className="px-3 py-2 rounded-md bg-[var(--color-rose)] text-white disabled:opacity-60"
+            onClick={onClick}
+        >
+            Delete
+        </button>
+    );
+}
+
 
 function RowRemarks({
     sessionId,
