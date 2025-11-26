@@ -8,13 +8,14 @@ export default function Header() {
                 <Image
                     src="./logo.png"
                     alt="Logo"
-                    width={60}
-                    height={0}
+                    width={80}
+                    height={80}
+                    className="w-[50px] h-[50px] md:w-[80px] md:h-[80px]"
                 />
             </div>
             <div className="flex flex-col justify-end">
-                <h2 className="">smallTech</h2>
-                <p className="font-normal leading-none">a madhyamakist enterprise</p>
+                <h1 className="">smallTech</h1>
+                <p className="text-liver-brown font-light">a madhyamakist enterprise</p>
             </div>
         </header>
     );
