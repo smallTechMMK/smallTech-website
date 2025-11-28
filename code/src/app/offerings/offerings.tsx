@@ -47,26 +47,13 @@ export default function Offerings() {
       {/* DESKTOP VIEW  */}
       <div className="hidden md:flex flex-col">
         {/* DESKTOP: TECHNOLOGIES */}
-        <h2 className="">Technologies we support</h2>
-        <h3 className="mb-5">
-          Integrate AI across your stack and into your existing workflows
-        </h3>
 
-        <div className="grid grid-cols-6 gap-14 mb-12">
-          {techItems.map((icon, idx) => (
-            <div key={idx} className="flex justify-center">
-              <Image src={`./${icon}`} alt={icon} width={40} height={40} />
-            </div>
-          ))}
-        </div>
-
-        {/* DESKTOP: OFFERINGS */}
         <h2 className="">What makes us stand out</h2>
-        <h3 className="mb-1">
+        <h3 className="mb-5 font-[200]">
           Integrate AI across your stack and into your existing workflows
         </h3>
 
-        <div className="grid grid-cols-4 gap-4 lg:px-[5%]">
+        <div className="grid grid-cols-4 gap-15 px-[2%] mb-12">
           {offeringItems.flat().map((item, idx) => (
 
             <Box
@@ -78,6 +65,21 @@ export default function Offerings() {
             />
           ))}
         </div>
+        {/* DESKTOP: OFFERINGS */}
+        <h2 className="">Technologies we support</h2>
+        <h3 className="mb-5 font-[200]">
+          Integrate AI across your stack and into your existing workflows
+        </h3>
+
+        <div className="grid grid-cols-9 gap-y-5 ">
+          {techItems.map((icon, idx) => (
+            <div key={idx} className="flex justify-center opacity-75">
+              <Image src={`./${icon}`} alt={icon} width={70} height={70} />
+            </div>
+          ))}
+        </div>
+
+
       </div>
     </div>
   );

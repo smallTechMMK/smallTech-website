@@ -17,7 +17,7 @@ export default function Box({ image,
         relative  
         rounded-[30px] 
         bg-[linear-gradient(to_bottom,#F2E3E1_0%,#DBC2BD_100%)]
-        shadow-[0_6px_20px_0_rgba(0,0,0,0.4)]
+        shadow-[0_3px_20px_0_rgba(0,0,0,0.4)]
         md:p-6 p-4
         flex flex-col md:flex-col 
         md:items-center 
