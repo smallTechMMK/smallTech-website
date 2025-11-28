@@ -6,10 +6,8 @@ export default function Landing() {
     <div className="relative min-h-screen overflow-hidden px-[3%] pt-3">
 
       <Header />
-      
-      <div className="mx-auto
-            px-4 md:px-20 lg:px-15
-            py-6 md:py-10">
+
+      <div className="">
 
       <div className="">
 
