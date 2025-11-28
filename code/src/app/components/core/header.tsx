@@ -2,20 +2,25 @@
 import Image from "next/image";
 
 export default function Header() {
-    return (
-        <header>
-            <div>
-                <Image
-                    src="./logo.png"
-                    alt="Logo"
-                    width={60}
-                    height={0}
-                />
-            </div>
-            <div className="flex flex-col justify-end">
-                <h2 className="">smallTech</h2>
-                <p className="font-normal leading-none">a madhyamakist enterprise</p>
-            </div>
-        </header>
-    );
+  return (
+    <header className="mb-14 flex items-center gap-3">
+
+      {/* Set height only — width becomes auto */}
+      <Image
+        src="/logo.png"
+        alt="Logo"
+        width={0}
+        height={0}
+        className="h-[4em] w-auto object-contain"
+      />
+
+      <div className="flex flex-col leading-none">
+        <h1 className="text-[32px] leading-none">smallTech</h1>
+        <h3 className="text-liver-brown font-[200] text-[16px] leading-none">
+          a madhyamakist enterprise
+        </h3>
+      </div>
+
+    </header>
+  );
 }

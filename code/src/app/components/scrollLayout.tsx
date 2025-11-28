@@ -5,6 +5,7 @@ import Landing from '../landing/landing';
 import Domains from '../domains/domains';
 import Offerings from '../offerings/offerings';
 import Chat from '../chat/chat';
+import Portfolio from '../portfolio/portfolio';
 export default function ScrollLayout() {
 useScrollSync()
   return (
@@ -14,6 +15,11 @@ useScrollSync()
           id="landing"
           
           content={<Landing />}
+        />
+         <Page
+          key="portfolio"
+          id="portfolio"
+          content={<Portfolio/>}
         />
          <Page
           key="offerings"
@@ -30,7 +36,9 @@ useScrollSync()
           key="chat"
           id="chat"
           content={<Chat/>}
+          className="md:hidden"
         />
+       
     </main>
   );
 }

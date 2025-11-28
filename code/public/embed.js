@@ -1,12 +1,14 @@
-(function() {
-  const chatUrl = document.currentScript.getAttribute("data-chat-url") || "https://smalltech.in/embed";
+(function () {
+  const chatUrl =
+    document.currentScript.getAttribute("data-chat-url") ||
+    "https://smalltech.in/embed";
 
   // Create iframe container
   const iframeWrapper = document.createElement("div");
   iframeWrapper.style.position = "fixed";
   iframeWrapper.style.bottom = "20px";
   iframeWrapper.style.right = "20px";
-   iframeWrapper.style.marginLeft = "auto";
+  iframeWrapper.style.marginLeft = "auto";
   iframeWrapper.style.width = "300px";
   iframeWrapper.style.height = "520px";
   iframeWrapper.style.borderRadius = "16px";
@@ -46,17 +48,32 @@
   });
   iframeWrapper.appendChild(closeBtn);
 
+  // Chat text label
+  const bubbleText = document.createElement("div");
+  bubbleText.innerHTML = "Talk to our AI Agent now";
+  bubbleText.style.position = "fixed";
+  bubbleText.style.bottom = "60px";
+  bubbleText.style.right = "140px";
+  bubbleText.style.background = "white";
+  bubbleText.style.padding = "8px 12px";
+  bubbleText.style.borderRadius = "12px";
+  bubbleText.style.boxShadow = "0 4px 10px rgba(0,0,0,0.12)";
+  bubbleText.style.border = "1px solid #eee";
+  bubbleText.style.zIndex = "999997";
+  bubbleText.style.fontSize = "14px";
+  bubbleText.style.color = "#5A2A27";
+
   // Floating chat bubble
   const bubble = document.createElement("div");
   bubble.innerHTML = "💬";
   bubble.style.position = "fixed";
-  bubble.style.bottom = "20px";
-  bubble.style.right = "20px";
-   bubble.style.marginLeft = "auto"; 
+  bubble.style.bottom = "50px";
+  bubble.style.right = "70px";
+  bubble.style.marginLeft = "auto";
   bubble.style.width = "60px";
   bubble.style.height = "60px";
   bubble.style.borderRadius = "50%";
-  bubble.style.background = "#5A2A27"; 
+  bubble.style.background = "#5A2A27";
   bubble.style.color = "white";
   bubble.style.display = "flex";
   bubble.style.alignItems = "center";
@@ -65,14 +82,25 @@
   bubble.style.fontSize = "28px";
   bubble.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
   bubble.style.zIndex = "999998";
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    iframeWrapper.style.display = "none";
+    bubble.style.display = "none";
+    bubbleText.style.display = "none";
+  }
 
   bubble.addEventListener("click", () => {
     iframeWrapper.style.display = "block";
   });
 
-  
-  document.body.appendChild(iframeWrapper);
-  document.body.appendChild(bubble);
+  function addChatElements() {
+    document.body.appendChild(iframeWrapper);
+    document.body.appendChild(bubble);
+    document.body.appendChild(bubbleText);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", addChatElements);
+  } else {
+    addChatElements();
+  }
 })();
-
-

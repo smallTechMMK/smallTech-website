@@ -1,13 +1,30 @@
 export const offeringItems = [
   [
-    { src: "./consultation.png", label: "High Fidelity Planning" },
-    { src: "./draw.png", label: "Design-First" },
+    {
+      src: "./consultation.png",
+      title: "High Fidelity Planning",
+      subtitle: "Beyond Accuracy — Planning You Can Trust",
+    },
+    {
+      src: "./draw.png",
+      title: "Design-First",
+      subtitle: "Prioritizing UX, Clarity & Flow",
+    },
   ],
   [
-    { src: "./file-management.png", label: "Risk Driven Project Management" },
-    { src: "./marketplace.png", label: "Continuous Delivery" },
+    {
+      src: "./file-management.png",
+      title: "Risk Driven Project Management",
+      subtitle: "Identify, Reduce & Manage Risk Early",
+    },
+    {
+      src: "./delivery.png",
+      title: "Continuous Delivery",
+      subtitle: "Ship Fast, Improve Faster",
+    },
   ],
 ];
+
 export const techItems = [
   "go.png", 
   "phoenix.png", 
@@ -24,5 +41,7 @@ export const techItems = [
   "gitlab.png", 
   "sonarqube.png", 
   "prometheus.png", 
-  "grafana.png"
+  "grafana.png",
+  "java.png",
+  "react.png"
 ];

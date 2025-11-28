@@ -17,6 +17,13 @@
   --color-licorice: #1D0E0C;
   --color-khaki:#A5978B;
   --color-rose:#B8887A;
+  --color-almond-silk: #E7C9C6;
+  --color-seashell-pink: #F2E3E1;
+  --color-bg-gradient:linear-gradient(to bottom, var(--color-almond-silk), var(--color-seashell-pink));
+  --color-deep-mocha:#473733;
+  --color-liver-brown:#5C4742;
+  --color-mauve-bark:#6A534D;
+  --color-expresso: #5A2A27;
 }
 
 body {

@@ -1,48 +1,87 @@
+import Box from "../components/common/box";
+import { offeringItems } from "./icons"
+import { techItems } from "./icons";
 import Image from "next/image";
-import OfferingCard from "./card";
-import { offeringItems, techItems } from "./icons";
 
 export default function Offerings() {
   return (
-    <div className=" max-h-screen flex flex-col items-center justify-center ">
-      {/* Section 2: Features */}
-      <div className=" flex flex-col items-center">
-        <h1 className="title mt-2">What makes us stand out</h1>
-        <div className="card-container gap-6 md:gap-4 lg:gap-4  ">
-          {offeringItems.map((row, idx) => (
-            <div
-              key={idx}
-              className={`grid ${row.length === 1
-                ? "grid-cols-1"
-                : "grid-cols-2 gap-6"
-                }`}
-            >
-              {row.map((item) => (
+    <div className="px-[3%] pt-3">
+      {/*MOBILE SCREEN 1: TECHNOLOGIES*/}
+      <div className="md:hidden min-h-screen flex flex-col justify-between py-6">
+        <section className="w-full">
+          <h2 className="mb-3">Technologies we support</h2>
+          <h3 className=" mb-5">
+            Integrate AI across your stack and into your existing workflows
+          </h3>
 
-                <OfferingCard key={item.label} src={item.src} label={item.label} />
-              ))}
+          <div className="grid grid-cols-3 gap-10">
+            {techItems.map((icon, i) => (
+              <div key={i} className="flex justify-center">
+                <Image src={`./${icon}`} alt={icon} width={50} height={50} />
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      {/* MOBILE SCREEN 2: OFFERINGS */}
+      <div className=" md:hidden min-h-screen flex flex-col justify-start py-6">
+        <section>
+          <h2 className="mb-3">What makes us stand out</h2>
+          <h3 className="mb-4">
+            Integrate AI across your stack and into your existing workflows
+          </h3>
+
+          <div className="grid grid-cols-1 gap-2">
+            {offeringItems.flat().map((item, idx) => (
+              <Box
+                key={idx}
+                image={item.src}
+                title={item.title}
+                subtitle={item.subtitle}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
+      {/* DESKTOP VIEW  */}
+      <div className="hidden md:flex flex-col">
+        {/* DESKTOP: TECHNOLOGIES */}
+
+        <h2 className="">What makes us stand out</h2>
+        <h3 className="mb-5 font-[200]">
+          Integrate AI across your stack and into your existing workflows
+        </h3>
+
+        <div className="grid grid-cols-4 gap-15 px-[2%] mb-12">
+          {offeringItems.flat().map((item, idx) => (
+
+            <Box
+              key={idx}
+              image={item.src}
+              title={item.title}
+              subtitle={item.subtitle}
+              className="md:[&_h2]:text-[18px] md:[&_h3]:text-[14px] md:[&_p]:text-[14px] md:[&_img]:w-[50px] md:[&_img]:h-[50px]"
+            />
+          ))}
+        </div>
+        {/* DESKTOP: OFFERINGS */}
+        <h2 className="">Technologies we support</h2>
+        <h3 className="mb-5 font-[200]">
+          Integrate AI across your stack and into your existing workflows
+        </h3>
+
+        <div className="grid grid-cols-9 gap-y-5 ">
+          {techItems.map((icon, idx) => (
+            <div key={idx} className="flex justify-center opacity-75">
+              <Image src={`./${icon}`} alt={icon} width={70} height={70} />
             </div>
           ))}
         </div>
+
+
       </div>
-      <h1 className="title">
-        Supported Technologies
-      </h1>
-
-      <div className="grid grid-cols-4 sm:grid-cols-4 gap-8 lg:m-0">
-        {techItems.map((icon, idx) => (
-          <div key={idx} className="flex justify-center">
-            <Image
-              src={`./${icon}`}
-              alt={icon}
-              width={35}
-              height={35}
-            />
-          </div>
-        ))}
-      </div>
-
-
     </div>
   );
 }
+
