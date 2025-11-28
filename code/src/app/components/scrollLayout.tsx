@@ -36,6 +36,7 @@ useScrollSync()
           key="chat"
           id="chat"
           content={<Chat/>}
+          className="md:hidden"
         />
        
     </main>
