@@ -15,14 +15,14 @@ export function Button({ text, onClick, className }: ButtonProps) {
     lg:w-[213px] lg:h-[62px]
         rounded-[60px] 
         bg-expresso
-        text-seashell-pink
-        shadow-lg 
+       
+        shadow-[0_3px_5px_0_rgba(0,0,0,0.4)]
         hover:opacity-90 transition
-        relative bottom-0
         ${className || ""}
       `}
         >
-            {text}
+            <p className="font-[500] text-seashell-pink">    {text}</p>
+        
 
         </button>
     );

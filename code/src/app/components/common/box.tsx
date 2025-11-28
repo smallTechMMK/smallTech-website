@@ -17,7 +17,7 @@ export default function Box({ image,
         relative  
         rounded-[30px] 
         bg-[linear-gradient(to_bottom,#F2E3E1_0%,#DBC2BD_100%)]
-        shadow-[0_6px_20px_0_rgba(0,0,0,0.4)]
+        shadow-[0_3px_20px_0_rgba(0,0,0,0.4)]
         md:p-6 p-4
         flex flex-col md:flex-col 
         md:items-center 
@@ -52,7 +52,7 @@ export default function Box({ image,
       </div>
 
       {/* DESKTOP LAYOUT */}
-      <div className="hidden md:flex flex-col items-center text-center flex-grow">
+      <div className="hidden md:flex flex-col items-center text-center">
 
         {/* ICON */}
         <Image
@@ -60,18 +60,18 @@ export default function Box({ image,
           alt={title}
           width={100}
           height={100}
-          className="mb-4 object-contain"
+          className="mb-4 object-contain opacity-70"
         />
 
         {/* TITLE */}
-        <h3 className="font-semibold mt-2 text-expresso">{title}</h3>
+        <h2 className="font-[500] mt-2 text-expresso">{title}</h2>
 
         {/* SUBTITLE */}
-        <p className="text-liver-brown mt-1">{subtitle}</p>
+        <h3 className="font-[400] text-liver-brown mt-2 ">{subtitle}</h3>
 
         {/* DESCRIPTION (only desktop) */}
         {description && (
-          <p className="text-liver-brown mt-15 hidden md:block">
+          <p className="font-[300] text-liver-brown mt-12 hidden md:block">
             {description}
           </p>
         )}
@@ -81,8 +81,8 @@ export default function Box({ image,
 
       {/* DESKTOP BUTTON*/}
       {buttonText && (
-        <div className="hidden md:flex absolute mt-6 bottom-10 left-0 right-0 justify-center">
-          <Button onClick={onButtonClick} text={buttonText} />
+        <div className="hidden md:flex mt-10 min-h-20 justify-center">
+          <Button onClick={onButtonClick} text={buttonText} className=" absolute bottom-10"/>
         </div>
       )}
     </div>

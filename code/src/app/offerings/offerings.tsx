@@ -5,10 +5,7 @@ import Image from "next/image";
 
 export default function Offerings() {
   return (
-    <div className="flex flex-col mx-auto
-    w-full
-    px-4 md:px-20 lg:px-15
-    py-0 md:pt-10">
+    <div className="px-[3%] pt-3">
       {/*MOBILE SCREEN 1: TECHNOLOGIES*/}
       <div className="md:hidden min-h-screen flex flex-col justify-between py-6">
         <section className="w-full">
@@ -50,26 +47,13 @@ export default function Offerings() {
       {/* DESKTOP VIEW  */}
       <div className="hidden md:flex flex-col">
         {/* DESKTOP: TECHNOLOGIES */}
-        <h2 className="">Technologies we support</h2>
-        <h3 className="mb-1">
-          Integrate AI across your stack and into your existing workflows
-        </h3>
 
-        <div className="grid grid-cols-6 gap-10">
-          {techItems.map((icon, idx) => (
-            <div key={idx} className="flex justify-center">
-              <Image src={`./${icon}`} alt={icon} width={40} height={40} />
-            </div>
-          ))}
-        </div>
-
-        {/* DESKTOP: OFFERINGS */}
         <h2 className="">What makes us stand out</h2>
-        <h3 className="mb-1">
+        <h3 className="mb-5 font-[200]">
           Integrate AI across your stack and into your existing workflows
         </h3>
 
-        <div className="grid grid-cols-4 gap-15">
+        <div className="grid grid-cols-4 gap-15 px-[2%] mb-12">
           {offeringItems.flat().map((item, idx) => (
 
             <Box
@@ -77,10 +61,25 @@ export default function Offerings() {
               image={item.src}
               title={item.title}
               subtitle={item.subtitle}
-              className="md:[&_h3]:text-[18px] md:[&_p]:text-[14px] md:[&_img]:w-[50px] md:[&_img]:h-[50px]"
+              className="md:[&_h2]:text-[18px] md:[&_h3]:text-[14px] md:[&_p]:text-[14px] md:[&_img]:w-[50px] md:[&_img]:h-[50px]"
             />
           ))}
         </div>
+        {/* DESKTOP: OFFERINGS */}
+        <h2 className="">Technologies we support</h2>
+        <h3 className="mb-5 font-[200]">
+          Integrate AI across your stack and into your existing workflows
+        </h3>
+
+        <div className="grid grid-cols-9 gap-y-5 ">
+          {techItems.map((icon, idx) => (
+            <div key={idx} className="flex justify-center opacity-75">
+              <Image src={`./${icon}`} alt={icon} width={70} height={70} />
+            </div>
+          ))}
+        </div>
+
+
       </div>
     </div>
   );

@@ -3,47 +3,51 @@ import Header from "../components/core/header"
 
 export default function Landing() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden px-[3%] pt-3">
 
       <Header />
-      
-      <div className="mx-auto
-            px-4 md:px-20 lg:px-15
-            py-6 md:py-10">
+
+      <div className="">
 
         {/*MAIN DESKTOP*/}
         <div className="hidden md:grid grid-cols-2">
           {/* LEFT COLUMN */}
           <div className="flex flex-col gap-12">
             <div>
-              <h2 className="">
-                AI-First Tech Services
+              <h2 className=" mb-3">
+                Our Mission
               </h2>
-              <h3 className="mt-4 max-w-md ">
-                integrate AI across your stack and into your existing workflows
-              </h3>
-
-              <h3 className="mt-4 max-w-md ">
-                integrate AI across your stack and into your existing workflows
-              </h3>
+              <p className=" mb-1 max-w-3xl">
+                At smallTech we are changing how the world &quot;works&quot;.
+         
+                By centring our philosophy around the effort to strive balance between production and consumption. </p>
             </div>
 
             <div>
-              <h2 className="">
-                Network of Service Providers
+              <h2 className="mb-3">
+                Who We Are
               </h2>
-              <h3 className="mt-4 max-w-md">
-                our service provider network has got all your needs covered
-              </h3>
 
-              <h3 className="mt-4 max-w-md">
-                our service provider network has got all your needs covered
-              </h3>
+              <p className="mb-1 max-w-3xl">
+               We are a collective of software developers, designers, and thinkers who believe in the power of technology to create a better world. 
+               
+                
+               Our mission is to build tools and platforms that empower individuals and communities, fostering a more equitable and sustainable future. </p>
+             
             </div>
+             <div>
+              <h2 className="mb-3">
+                Our Expertise
+              </h2>
+               <p className="mb-1 max-w-3xl">
+              Integrate AI across your stack and into your existing workflows.
+Our service provider network has got all your needs covered </p>
+
+ </div>
           </div>
 
           {/* RIGHT COLUMN (GLOBE) */}
-          <div className="relative flex items-center justify-center">
+          <div className="relative flex items-center justify-end">
             <Image
               src="/globe.png"
               width={600}

@@ -18,7 +18,7 @@ export const offeringItems = [
       subtitle: "Identify, Reduce & Manage Risk Early",
     },
     {
-      src: "./marketplace.png",
+      src: "./delivery.png",
       title: "Continuous Delivery",
       subtitle: "Ship Fast, Improve Faster",
     },
