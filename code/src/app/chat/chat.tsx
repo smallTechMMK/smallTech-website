@@ -35,8 +35,8 @@ export default function Chat() {
           <div
             key={i}
             className={`max-w-[85%] px-3 py-[1%] rounded-lg ${msg.sender === "You"
-              ? "bg-brown self-end text-cinereous font-semibold"
-              : "bg-cinereous self-start text-brown font-semibold"
+              ? "bg-brown self-end text-cream shadow-lg"
+              : "bg-seashell-pink self-start text-seashell-pink shadow-lg "
               }`}
           >
             {msg.sender === "You" ? (
@@ -51,7 +51,7 @@ export default function Chat() {
         ))}
         {/* Typing Indicator */}
         {isBotProcessing && (
-          <div className="bg-cinereous self-start text-brown font-semibold px-3 py-[1%] rounded-lg flex space-x-1">
+          <div className="bg-seashell-pink self-start text-brown font-semibold px-3 py-[1%] rounded-lg flex space-x-1">
             <span className="animate-bounce">.</span>
             <span className="animate-bounce delay-150">.</span>
             <span className="animate-bounce delay-300">.</span>
@@ -63,10 +63,10 @@ export default function Chat() {
           onSubmit={sendMessage}
           className="mt-1"
         >
-          <div className="flex items-center bg-rose rounded-xl border border-black px-3 py-2 shadow-md">
+          <div className="flex items-center bg-expresso rounded-xl border border-black px-3 py-2 shadow-md">
             <input
               type="text"
-              className="flex-1 text-brown placeholder-brown bg-transparent outline-none font-semibold"
+              className="flex-1 text-cream placeholder-cream bg-transparent outline-none font-semibold"
               placeholder="Type a message"
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -74,7 +74,7 @@ export default function Chat() {
             />
             <button
               type="submit"
-              className="text-brown font-semibold ml-2 hover:text-cinereous transition"
+              className="text-cream font-semibold ml-2 hover:text-cinereous transition"
               disabled={isBotProcessing}
             >
               Send

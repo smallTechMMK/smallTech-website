@@ -41,7 +41,5 @@ p {
   lg:text-lg
   text-liver-brown;
 }
-a {
-  @apply text-cinereous;
-}
+
 }
