@@ -9,8 +9,6 @@ export default function Landing() {
 
       <div className="">
 
-      <div className="">
-
         {/*MAIN DESKTOP*/}
         <div className="hidden md:grid grid-cols-2">
           {/* LEFT COLUMN */}
