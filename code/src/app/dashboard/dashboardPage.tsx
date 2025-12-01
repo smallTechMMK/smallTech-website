@@ -259,6 +259,8 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
                                 <div>email: {r.email}</div>
                                 <div>country: {r.country}</div>
                                 <div>mobile: {r.mobile_number}</div>
+                                <div>domain: {r.domain}</div>
+                                <div>time: {r.time}</div>
                             </div>
                             <div className="mt-3 flex items-center gap-3">
                                 <div className={`w-40 ${statusColors[r.status]}`}>
