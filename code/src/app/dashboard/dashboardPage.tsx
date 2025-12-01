@@ -93,6 +93,8 @@ export default function DashboardPage({ initialRows }: { initialRows: LeadRowDat
                         <div>email: {r.email}</div>
                         <div>country: {r.country}</div>
                         <div>mobile: {r.mobile_number}</div>
+                        <div>domain: {r.domain}</div>
+                        <div>time: {r.time}</div>
                     </div>
                 );
             },
