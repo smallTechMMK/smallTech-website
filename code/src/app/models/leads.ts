@@ -9,6 +9,8 @@ export interface LeadRowData {
   status: LeadStatus;
   remarks?: string;
   is_active: boolean;
+  domain: string;
+  time: string;
 }
 
 export interface Message {
