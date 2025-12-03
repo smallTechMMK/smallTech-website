@@ -1,8 +1,7 @@
 "use client";
 import Footer from "../components/core/footer";
 import { useChat } from "../hooks/useChat";
-import { marked } from "marked"; 
-
+import Image from "next/image";
 export default function Chat() {
   const {
     chatBoxText,
@@ -23,7 +22,7 @@ export default function Chat() {
 
       <div
         ref={chatBoxText}
-        className="flex flex-col overflow-y-auto space-y-3 "
+        className="flex flex-col overflow-y-auto space-y-1 "
         style={{
           flexGrow: 1,
           maxHeight: "calc(110vh - 200px)",
@@ -34,18 +33,15 @@ export default function Chat() {
         {messages.map((msg, i) => (
           <div
             key={i}
-            className={`max-w-[85%] px-3 py-[1%] rounded-lg ${msg.sender === "You"
-              ? "bg-brown self-end text-cream shadow-lg"
-              : "bg-seashell-pink self-start text-seashell-pink shadow-lg "
+            className={`max-w-[85%] px-4 py-2 rounded-lg  ${msg.sender === "You"
+              ? " bg-seashell-pink self-end text-seashell-pink  shadow-lg"
+              : " bg-brown self-start  text-cream shadow-lg "
               }`}
           >
             {msg.sender === "You" ? (
-              msg.text
+              <p className="font-[400]">{msg.text}</p>
             ) : (
-              <div
-                className="text-sm text-brown font-semibold"
-                dangerouslySetInnerHTML={{ __html: marked.parse(msg.text) }}
-              />
+               <p className="text-seashell-pink font-[400]">{msg.text}</p>
             )}
           </div>
         ))}
@@ -61,12 +57,12 @@ export default function Chat() {
       {isClient && (
         <form
           onSubmit={sendMessage}
-          className="mt-1"
+          className="mt-4 mb-20"
         >
           <div className="flex items-center bg-expresso rounded-xl border border-black px-3 py-2 shadow-md">
             <input
               type="text"
-              className="flex-1 text-cream placeholder-cream bg-transparent outline-none font-semibold"
+              className="flex-1 text-cream placeholder-cream bg-transparent outline-none font-[200]"
               placeholder="Type a message"
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -77,7 +73,7 @@ export default function Chat() {
               className="text-cream font-semibold ml-2 hover:text-cinereous transition"
               disabled={isBotProcessing}
             >
-              Send
+              <Image src="./send.svg" alt="Sales" width={20} height={20} />
             </button>
           </div>
         </form>
