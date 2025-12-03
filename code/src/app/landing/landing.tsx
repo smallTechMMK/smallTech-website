@@ -127,7 +127,7 @@ export default function Landing() {
           </div>
 
 
-          <div className="flex justify-center my-10">
+          <div className="flex justify-center my-5">
             <Image
               src="/globe.png"
               width={300}
