@@ -6,24 +6,7 @@ import Image from "next/image";
 export default function Offerings() {
   return (
     <div className="px-[3%] pt-3">
-      {/*MOBILE SCREEN 1: TECHNOLOGIES*/}
-      <div className="md:hidden min-h-screen flex flex-col justify-between py-6">
-        <section className="w-full">
-          <h2 className="mb-3">Technologies we support</h2>
-          <h3 className=" mb-5">
-            Integrate AI across your stack and into your existing workflows
-          </h3>
-
-          <div className="grid grid-cols-3 gap-10">
-            {techItems.map((icon, i) => (
-              <div key={i} className="flex justify-center">
-                <Image src={`./${icon}`} alt={icon} width={50} height={50} />
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
-
+      
       {/* MOBILE SCREEN 2: OFFERINGS */}
       <div className=" md:hidden min-h-screen flex flex-col justify-start py-6">
         <section>
@@ -44,6 +27,24 @@ export default function Offerings() {
           </div>
         </section>
       </div>
+      {/*MOBILE SCREEN 1: TECHNOLOGIES*/}
+      <div className="md:hidden min-h-screen flex flex-col justify-between py-6">
+        <section className="w-full">
+          <h2 className="mb-3">Technologies we support</h2>
+          <h3 className=" mb-5">
+            Integrate AI across your stack and into your existing workflows
+          </h3>
+
+          <div className="grid grid-cols-3 gap-10">
+            {techItems.map((icon, i) => (
+              <div key={i} className="flex justify-center">
+                <Image src={`./${icon}`} alt={icon} width={50} height={50} />
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
       {/* DESKTOP VIEW  */}
       <div className="hidden md:flex flex-col">
         {/* DESKTOP: TECHNOLOGIES */}

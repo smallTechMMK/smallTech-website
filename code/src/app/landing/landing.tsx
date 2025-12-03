@@ -19,7 +19,7 @@ export default function Landing() {
               </h2>
               <p className=" mb-1 max-w-3xl">
                 At smallTech we are changing how the world &quot;works&quot;.
-         
+
                 By centring our philosophy around the effort to strive balance between production and consumption. </p>
             </div>
 
@@ -29,21 +29,21 @@ export default function Landing() {
               </h2>
 
               <p className="mb-1 max-w-3xl">
-               We are a collective of software developers, designers, and thinkers who believe in the power of technology to create a better world. 
-               
-                
-               Our mission is to build tools and platforms that empower individuals and communities, fostering a more equitable and sustainable future. </p>
-             
+                We are a collective of software developers, designers, and thinkers who believe in the power of technology to create a better world.
+
+
+                Our mission is to build tools and platforms that empower individuals and communities, fostering a more equitable and sustainable future. </p>
+
             </div>
-             <div>
+            <div>
               <h2 className="mb-3">
                 Our Expertise
               </h2>
-               <p className="mb-1 max-w-3xl">
-              Integrate AI across your stack and into your existing workflows.
-Our service provider network has got all your needs covered </p>
+              <p className="mb-1 max-w-3xl">
+                Integrate AI across your stack and into your existing workflows.
+                Our service provider network has got all your needs covered </p>
 
- </div>
+            </div>
           </div>
 
           {/* RIGHT COLUMN (GLOBE) */}
@@ -110,21 +110,30 @@ Our service provider network has got all your needs covered </p>
 
           <div>
             <h2 className="">
-              AI-First Tech Services
+              Our Mission
             </h2>
-            <h3 className="mt-3">
-              integrate AI across your stack and into your existing workflows
-            </h3>
+            <p className="mb-3"> At smallTech we are changing how the world &quot;works&quot;.
+
+            </p>
+          </div>
+          <div className="">
+            <h2>
+              Who We Are
+            </h2>
+            <p>
+              We are a collective of software developers, designers, and thinkers who believe in the power of technology to create a better world.
+
+            </p>
           </div>
 
 
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="flex justify-center my-5">
             <Image
               src="/globe.png"
               width={300}
               height={300}
               alt="globe"
-              className="animate-spin [animation-duration:20s] [animation-timing-function:linear] w-[360px] max-w-none "
+              className="animate-spin [animation-duration:20s] [animation-timing-function:linear] w-[250px] max-w-none "
             />
 
 
@@ -154,12 +163,11 @@ Our service provider network has got all your needs covered </p>
 
           </div>
 
-          <div className="absolute bottom-[10%]">
-            <h2 className="">
-              Network of Service Providers
+          <div className="">
+            <h2 className=""> Our Expertise
             </h2>
-            <h3 className="mt-3">
-              our service provider network has got all your needs covered
+            <h3 className="">
+              Integrate AI across your stack and into your existing workflows.
             </h3>
           </div>
 
