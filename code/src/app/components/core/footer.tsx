@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-export default function Footer() {
+export default function Footer({ className = "" }) {
     const currentYear = new Date().getFullYear();
     return (
-        <footer className="flex items-center justify-center ">
-             <div className="flex flex-col text-xs space-y-2 font-[200] ">
+        <footer className={`flex items-center justify-center ${className}`}>
+             <div className="flex flex-col text-xs space-y-2 font-[200]  md:flex-row md:space-x-6 md:text-center md:items-center md:justify-center    ">
           <Link
             href="https://blog.smallTech.in"
-            className="flex hover:underline space-x-2"
+            className="flex hover:underline space-x-2 items-center"
           >
             <Image src="./blog.png" width={15} height={15} alt="blog" className="opacity-60" />
             <span className=" text-expresso">blog.smallTech.in</span>

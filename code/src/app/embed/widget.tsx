@@ -1,6 +1,6 @@
 "use client";
 import { useChat } from "../hooks/useChat";
-
+import Image from "next/image";
 export default function Chat() {
   const {
     chatBoxText,
@@ -21,7 +21,7 @@ export default function Chat() {
 
       <div
         ref={chatBoxText}
-        className="flex flex-col overflow-y-auto space-y-3 "
+        className="flex flex-col overflow-y-auto space-y-1 "
         style={{
           flexGrow: 1,
           maxHeight: "calc(110vh - 200px)",
@@ -32,17 +32,21 @@ export default function Chat() {
         {messages.map((msg, i) => (
           <div
             key={i}
-            className={`max-w-[85%] px-3 py-[1%] rounded-lg ${msg.sender === "You"
-              ? "bg-brown self-end text-cinereous font-semibold"
-              : "bg-cinereous self-start text-brown font-semibold"
+             className={`max-w-[85%] px-4 py-2 rounded-lg  ${msg.sender === "You"
+              ? " bg-seashell-pink self-end text-seashell-pink  shadow-lg"
+              : " bg-brown self-start  text-cream shadow-lg "
               }`}
           >
-            {msg.text}
+            {msg.sender === "You" ? (
+              <p className="font-[400]">{msg.text}</p>
+            ) : (
+               <p className="text-seashell-pink font-[400]">{msg.text}</p>
+            )}
           </div>
         ))}
         {/* Typing Indicator */}
-        {isBotProcessing && (
-          <div className="bg-cinereous self-start text-brown font-semibold px-3 py-[1%] rounded-lg flex space-x-1">
+         {isBotProcessing && (
+          <div className="bg-seashell-pink self-start text-brown font-semibold px-3 py-[1%] rounded-lg flex space-x-1">
             <span className="animate-bounce">.</span>
             <span className="animate-bounce delay-150">.</span>
             <span className="animate-bounce delay-300">.</span>
@@ -52,12 +56,12 @@ export default function Chat() {
       {isClient && (
         <form
           onSubmit={sendMessage}
-          className="mt-1"
+           className="mt-4"
         >
-          <div className="flex items-center bg-rose rounded-xl border border-black px-3 py-2 shadow-md">
+          <div className="flex items-center bg-expresso rounded-xl border border-black px-3 py-2 shadow-md">
             <input
               type="text"
-              className="flex-1 text-brown placeholder-brown bg-transparent outline-none font-semibold"
+              className="flex-1 text-cream placeholder-cream bg-transparent outline-none font-[200]"
               placeholder="Type a message"
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -65,10 +69,10 @@ export default function Chat() {
             />
             <button
               type="submit"
-              className="text-brown font-semibold ml-2 hover:text-cinereous transition"
+              className="text-cream font-semibold ml-2 hover:text-cinereous transition"
               disabled={isBotProcessing}
             >
-              Send
+           <Image src="./send.svg" alt="Sales" width={20} height={20} />
             </button>
           </div>
         </form>

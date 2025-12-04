@@ -1,5 +1,6 @@
 
 import Box from "../components/common/box";
+import Footer from "../components/core/footer";
 import { techDomains, businessDomains } from "./constants";
 
 export default function Domains() {
@@ -92,6 +93,7 @@ export default function Domains() {
           ))}
         </div>
       </div>
+      <Footer className= "hidden md:block " />
     </div>
   );
 }
