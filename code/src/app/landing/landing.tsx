@@ -15,7 +15,7 @@ export default function Landing() {
           <div className="flex flex-col gap-12">
             <div>
               <h2 className=" mb-3">
-                Our Mission
+                Our Mission (Staging)
               </h2>
               <p className=" mb-1 max-w-3xl">
                 At smallTech we are changing how the world &quot;works&quot;.
