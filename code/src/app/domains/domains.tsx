@@ -38,7 +38,7 @@ export default function Domains() {
 
           <h2 className="mb-2">Business Workflows</h2>
           <h3 className="mb-5">
-            Explore our portfolio of AI, apps and web innovation
+            Workflows our team has automated for our clients
           </h3>
 
           <div className="grid grid-cols-1 gap-3">
@@ -78,7 +78,7 @@ export default function Domains() {
         {/* DESKTOP: BUSINESS DOMAINS */}
         <h2 className="">Business Workflows</h2>
         <h3 className="mb-5 font-[200]">
-          Explore our portfolio of AI, apps and web innovation
+          Workflows our team has automated for our clients
         </h3>
 
         <div className="grid grid-cols-4 gap-15 px-[2%]">
