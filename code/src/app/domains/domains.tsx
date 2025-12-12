@@ -16,7 +16,7 @@ export default function Domains() {
 
           <h2 className="mb-2">Tech Domains</h2>
           <h3 className="mb-2">
-            Explore our portfolio of AI, apps and web innovation
+            Our network of service providers help us deliver end-to-end solutions
           </h3>
 
           <div className="grid grid-cols-1 gap-3">
@@ -60,7 +60,7 @@ export default function Domains() {
         {/* DESKTOP: TECH DOMAINS */}
         <h2 className="">Tech Domains</h2>
         <h3 className="mb-5 font-[200]">
-          Explore our portfolio of AI, apps and web innovation
+          Our network of service providers help us deliver end-to-end solutions
         </h3>
 
         <div className="grid grid-cols-5 gap-15  px-[2%] mb-12">

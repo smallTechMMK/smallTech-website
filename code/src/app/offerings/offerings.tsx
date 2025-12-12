@@ -12,7 +12,7 @@ export default function Offerings() {
         <section>
           <h2 className="mb-3">What makes us stand out</h2>
           <h3 className="mb-4">
-            Integrate AI across your stack and into your existing workflows
+            These are integral to our process and each project we undertake
           </h3>
 
           <div className="grid grid-cols-1 gap-2">
@@ -32,7 +32,7 @@ export default function Offerings() {
         <section className="w-full">
           <h2 className="mb-3">Technologies we support</h2>
           <h3 className=" mb-5">
-            Integrate AI across your stack and into your existing workflows
+            Integrate AI across your existing tech stack
           </h3>
 
           <div className="grid grid-cols-3 gap-10">
@@ -51,7 +51,7 @@ export default function Offerings() {
 
         <h2 className="">What makes us stand out</h2>
         <h3 className="mb-5 font-[200]">
-          Integrate AI across your stack and into your existing workflows
+          These are integral to our process and each project we undertake
         </h3>
 
         <div className="grid grid-cols-4 gap-15 px-[2%] mb-12">
@@ -69,7 +69,7 @@ export default function Offerings() {
         {/* DESKTOP: OFFERINGS */}
         <h2 className="">Technologies we support</h2>
         <h3 className="mb-5 font-[200]">
-          Integrate AI across your stack and into your existing workflows
+          Integrate AI across your existing tech stack
         </h3>
 
         <div className="grid grid-cols-9 gap-y-5 ">
