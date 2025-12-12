@@ -1,10 +1,19 @@
 (function () {
-  const script = document.currentScript;  
+  const script = document.currentScript;
   const chatUrl =
     document.currentScript.getAttribute("data-chat-url") ||
     "https://smalltech.in/embed";
 
-    const enableMobile = script.getAttribute("data-display-mobile") === "true";
+  let displayMobile = script.getAttribute("data-display-mobile");
+  if (displayMobile === null || displayMobile.trim() === "") {
+    displayMobile = true;
+  } else if (displayMobile.toLowerCase().trim() === "true") {
+    displayMobile = true;
+  } else {
+    displayMobile = false;
+  }
+  //  const enableMobile = attr === null ? true : attr === "true";
+
   // Create iframe container
   const iframeWrapper = document.createElement("div");
   iframeWrapper.style.position = "fixed";
@@ -85,14 +94,14 @@
   bubble.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15)";
   bubble.style.zIndex = "999998";
 
-  // Hide on mobile if enableMobile = false
-  if (!enableMobile && window.matchMedia("(max-width: 768px)").matches) {
-    bubble.style.display = "none";
-    bubbleText.style.display = "none";
-    iframeWrapper.style.display = "none";
+  if (displayMobile === false) {
+    // Hide on mobile
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      bubble.style.display = "none";
+      bubbleText.style.display = "none";
+      iframeWrapper.style.display = "none";
+    }
   }
-
-
   bubble.addEventListener("click", () => {
     iframeWrapper.style.display = "block";
     // Track click in GA4
